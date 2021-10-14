@@ -55,7 +55,7 @@
         <div class="col-2"><img src="banyan.jpg" id="image23" onclick="check(22)" class="img-fluid" alt="Tree Image"></div>
         <div class="col-2"><img src="banyan.jpg" id="image24" onclick="check(23)" class="img-fluid" alt="Tree Image"></div>
     </div> <br>
- </div>]
+ </div>
 
 <script>
         let ids = ["image1","image2","image3","image4","image5","image6","image7","image8","image9","image10","image11","image12",
@@ -95,24 +95,26 @@
         var ab= 0, cd = 0;
         var a1b= 0, a1y = 0;
 
-        for (var y = 0; y < x.length; y++) {
-        for (var z = 0; z < x[0].length; z++) {
-        if (x[y][z] == pos1) {
+        for (var y = 0; y < x.length; y++) 
+        {
+        for (var z = 0; z < x[0].length; z++) 
+        {
+        if (x[y][z] == pos1) 
+        {
             ab = y;
-            ab = z;
+            cd = z;
         }
-
-        if (x[y][z] == pos2) {
-            a1x = y;
+        if (x[y][z] == pos2)
+        {
+            a1b = y;
             a1y= z;
         }
      }
 }
 
-var row = Math.abs(ab - a1x);
-var column = Math.abs(cd - a1y);
-return row + column - 1;
-
+var row = Math.abs(ab - a1b);
+var col = Math.abs(cd - a1y);
+return row + col - 1;
 }
 
 
