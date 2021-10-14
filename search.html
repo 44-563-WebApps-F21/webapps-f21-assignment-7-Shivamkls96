@@ -19,8 +19,11 @@
       <p style="color:black; font-family: Arial, Helvetica, sans-serif;">Click on the squares to search for wild life</p>
       <p  style="color:rgb(14, 226, 32)"; id="tries">Number of tries zero</p>
       <p style="color: rgb(46, 15, 185);" id ="distance">Distance is unknown</p>
+      <div class="btn btn-info mb-6" onclick="newGame()">Reset</div>
       </div>
  </div>
+ <br>
+ <br>
 
  <div class="container">
     <div class="row">
@@ -63,7 +66,8 @@
         
         var triesCount = 0;
         var animalLocation = 13;
-        var id
+        var id;
+        var xyz;
         function check(index) {
             for (let a = 0; a < ids.length; a++)
         {
@@ -82,7 +86,7 @@
             document.getElementById("tries").innerHTML = "Count of tries is " + triesCount;
             console.log(index)
             xyz = distance(index, animalLocation)
-            document.getElementById("distance").innerHTML = "Distance is " + xyz
+            document.getElementById("distance").innerHTML = "Distance is " + xyz ;
         }
 
         function distance(pos1, pos2) 
@@ -117,6 +121,16 @@ var col = Math.abs(cd - a1y);
 return row + col - 1;
 }
 
+function newGame() {
+            triesCount = 0
+            animalLocation = Math.floor(Math.random() * 23 + 0)
+            document.getElementById("tries").innerHTML = "Number of tries is 0."
+            for (var i = 0; i < 24; i++) {
+                if (ids[i] == ids[animalLocation])
+                    document.getElementById(ids[i]).src = "chillar.jpeg"
+
+            }
+        }
 
 </script>
 

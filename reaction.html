@@ -16,20 +16,12 @@
   <div id = "target"> Your Time</div>
   <div id = "countdown"> Count</div>
 
-  <button type="button"
-  class="btn btn-primary"
-  onclick="startTime()">
-  Start timer</button>
-
-  <button type="button"
-  class="btn btn-danger"
-  onclick="recordReact()">
-  React Now</button>
+  <button type="button" class="btn btn-primary" onclick="startTime()"> Start timer</button>
+  <button type="button" class="btn btn-danger" onclick="recordReact()">React Now</button>
   
 
   <script> 
   var myTime = undefined;
-
   function recordReact() {
     myTime = Date.now()
     console.log("time is:"+myTime)
@@ -51,13 +43,24 @@
       var element = document.getElementById("target")
       if(myTime == undefined)
           element.innerHTML = "Too Slow"
+
       else{
           var buttonTime = Date.now()
           var difference = buttonTime - myTime
           element.innerHTML = "Time was " + difference
       }
     }
+   
+    function startTime() {
+            var countd = Math.floor(Math.random() * (10 - 2) + 2)
+            for (let i = countd; i < 10; i++) {
+                var j = (3 - i) * 1000;
+                setTimeout(() => {
+                    document.getElementById("countdown").innerHTML = i;
+                }, j)
+            }
 
+        }     
 
   </script>
 
